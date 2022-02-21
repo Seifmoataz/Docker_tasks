@@ -1,0 +1,15 @@
+1. Create a Dockerfile to deploy node-app application
+
+2. Create static html file
+	Write Dockerfile to build image based on httpd to host the html file and
+	specify the following:
+	• Copy the html file.
+	• Copy a new configuration file to listen on port 9999 instead of 80
+	• Open the port 9999 in the container
+	• Create volume my-data
+	• Mount the my-data volume to /code
+5. Create a volume called mysql_data
+        • deploy a MySQL database called app-database. Use the mysql latest image
+        • use the -e flag to C2 Generalset MYSQL_ROOT_PASSWORD to P4sSw0rd0!.
+	• Mount the mysql_data volume to /var/lib/mysql. The container should run in
+	the background.
