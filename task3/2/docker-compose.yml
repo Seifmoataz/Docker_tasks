@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+#mysql image
+  mysql_server:
+    image: mysql
+    environment:
+
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+
+ #node express app image
+  nodejsapp:
+    depends_on:
+      - mysql_server
+    build: .
+     # write the port in which will run on your host browser (8080) then write the port which is devlared in the application it self (3000)
+    ports:
+      - 8080:3000
+  
