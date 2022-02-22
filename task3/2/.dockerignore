@@ -1,0 +1,3 @@
+#write the files in your directory that you want the dockerfile to ignore while building the container
+#ex: >>>  /test
+#         /test2
